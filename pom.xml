@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jasperreports.honlynn</groupId>
+  <artifactId>show-and-display-files</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Jasperreports Using API</name>
+
+  <properties>
+  	<java.version>1.8</java.version>
+  </properties>
+  
+  <parent>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-parent</artifactId>
+  	<version>2.2.5.RELEASE</version>
+  </parent>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+  		<artifactId>spring-boot-starter-web</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+  		<artifactId>spring-boot-devtools</artifactId>
+  		<optional>true</optional>
+  	</dependency>
+  </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.springframework.boot</groupId>
+  			<artifactId>spring-boot-maven-plugin</artifactId>
+  			<configuration>
+  				<excludeDevtools>false</excludeDevtools>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+	<resources>
+		<resource>
+			<!-- xml放在java目录下-->
+			<directory>src/main/java/org/honlynn/showfiles/</directory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</resource>
+		<!--解决idea不识别resources的问题-->
+		<resource>
+			<directory>src/main/resources</directory>
+			<filtering>true</filtering>
+			<excludes>
+				<exclude>fonts/*</exclude>
+			</excludes>
+		</resource>
+	</resources>
+  </build>
+</project>
