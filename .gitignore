@@ -1,0 +1,14 @@
+*.iml
+logs
+test
+*/src/test/**
+target
+*/target/**
+*.classpath
+*.project
+.settings/
+.env
+**/export/**
+public/
+dist.zip
+/.metadata/
